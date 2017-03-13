@@ -1,0 +1,131 @@
+.header{
+	margin: 0;
+	padding: 0;
+	background-color: red;
+	text-align: left;
+}
+.main{
+    display: block;
+	margin: 0;
+    padding: 0;
+}
+.nav{
+	float: left;
+    width: 200px;
+    margin: 0;
+    padding: 0;
+    background-color: green;
+    text-align: left;
+}
+.section{
+	margin: 0 200px;
+    background-color: blue;
+    text-align: center;
+}
+.aside {
+	float: right;
+    width: 200px;
+    margin: 0;
+    padding: 0;
+    background-color: yellow;
+    text-align: left;
+}
+.footer{
+	margin: 0;
+	padding: 0;
+	background-color: pink;
+	text-align: left;
+}
+.hidden-sec{
+    width: 100%;
+    background-color: #ADD8E6;
+    text-align: center;
+    display: none;
+}
+input[type="submit"],[type="button"]{
+    background: #2471FF;
+    border: none;
+    margin-left: auto;
+    padding: 10px 20px 10px 20px;
+    border-bottom: 3px solid #5994FF;
+    border-radius: 3px;
+    color: #D2E2FF;
+}
+input[type="submit"],[type="button"]:hover{
+    background: #6B9FFF;
+    color:#fff;
+}
+table {
+    width: 40%;
+    margin: 0;
+    background: #FFFFFF;
+    border: 2px solid #333333;
+    border-collapse: collapse;
+}
+td, th {
+    border: 2px solid #333333;
+    padding: 6px 16px;
+    text-align: center;
+}
+th {
+    background: #EEEEEE;
+}
+@media screen and (max-device-width: 480px){
+    .header{
+        margin: 0;
+        padding: 0;
+        background-color: red;
+        text-align: left;
+    }
+    .main{
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+    .nav{
+        float: left;
+        width: 100px;
+        margin: 0;
+        padding: 0;
+        background-color: green;
+        text-align: left;
+    }
+    .section{
+        margin: 0 100px;
+        background-color: blue;
+        text-align: center;
+    }
+    .aside {
+        float: right;
+        width: 100px;
+        margin: 0;
+        padding: 0;
+        background-color: yellow;
+        text-align: left;
+    }
+    .footer{
+        margin: 0;
+        padding: 0;
+        background-color: pink;
+        text-align: left;
+    }
+    .hidden-sec{
+        width: 100%;
+        background-color: #ADD8E6;
+        text-align: center;
+        display: none;
+    }
+    input[type="submit"],[type="button"]{
+        background: #2471FF;
+        border: none;
+        margin-left: auto;
+        padding: 5px 10px 5px 10px;
+        border-bottom: 1px solid #5994FF;
+        border-radius: 1px;
+        color: #D2E2FF;
+    }
+    input[type="submit"],[type="button"]:hover{
+        background: #6B9FFF;
+        color:#fff;
+    }
+}

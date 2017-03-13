@@ -1,0 +1,41 @@
+div {
+    display: block;
+}
+#header{
+	margin: 0;
+	padding: 0;
+	background-color: red;
+	text-align: center;
+}
+#main{
+	margin: 0;
+    padding: 0;
+}
+#nav{
+	float: left;
+    width: 150px;
+    margin: 0;
+    padding: 0;
+    background-color: green;
+    text-align: center;
+}
+#section{
+	margin: 0 150px;
+    background-color: blue;
+    text-align: center;
+}
+#aside {
+	float: right;
+    width: 150px;
+    margin: 0;
+    padding: 0;
+    background-color: yellow;
+    text-align: center;
+}
+#footer{
+	margin: 0;
+	padding: 0;
+	background-color: pink;
+	text-align: center;
+}
+

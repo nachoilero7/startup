@@ -1,0 +1,70 @@
+<!doctype html>
+<html class="no-js" lang="en-GB">
+    <head>
+        <meta charset="utf-8">
+        <title>INDEX</title>
+        <meta name="description" content="Experiment with specificity right now using CSS3 selectors http://specificity.keegan.st/
+            Now add the following classes to the document created in section 2.1:
+                To <header> add class .header
+                To <footer> add class .footer
+                To <section> add class .content
+                To <nav> add class .navigation
+                To <aside> add class .sidebar
+            Using the new added classes figure out how to override:
+                .header must have a font size of 46px
+                .footer must have a font size of 10px
+                .content must have a font size of 14px
+                .navigation must have a font size of 12px
+                .sidebar must have a font size of 10px
+            If the class attribute finishes with r (example header, footer), the background must be magenta.
+            If the class attribute contains an a (example nav) but do NOT finish with r, the background must be blue.
+            How could you add weight to the global font definition to win over the classes added by point 3?
+            Imagine there is a declaration like class=”oh-no-inline-styles” style=”background:red” and you need to change the background to green without changing the inline style. How could you accomplish this?">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="./style.css"/>
+        <link rel="stylesheet" type="text/css" href="./normalize.css"/>
+    </head>
+    <body>
+        <div class="header">
+            <header>
+                <h1>Header</h1>
+            </header>
+        </div>
+        <div>
+            <div class="navigation">
+                <nav>
+                    <h1>Nav</h1>
+                </nav>
+            </div>
+            <div class="sidebar">
+                <aside>
+                    <h1>Aside</h1>
+                </aside>
+            </div>
+            <div class="content">
+                <section>
+                    <div>
+                        <header>
+                            <h1>Header Section</h1>
+                        </header>
+                    </div>
+                    <div>
+                        <article>
+                            <h1>Article Section</h1>
+                        </article>
+                    </div>
+                    <div>
+                        <footer>
+                            <h1>Footer Section</h1>
+                        </footer>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="footer">
+            <footer>
+                <h1>Footer</h1>
+            </footer>
+        </div>
+    </body>
+</html>

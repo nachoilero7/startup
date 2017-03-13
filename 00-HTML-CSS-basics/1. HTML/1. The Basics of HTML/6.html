@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<title>Sign Up Form</title>
+	<meta name="description" content="Create a sign up form with fields for: first name, last name, email, birthday, a dropdown to choose your favourite sport, and a text-area to include a small bio for the user. Add a button at the end to submit the form, and another one to clear the form. Add relevant validation rules for all fields (like required fields, valid email).">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style type="text/css">
+		.sign-up-form{
+		    width:50%;
+		    background:#fff;
+		    border-radius:2px;
+		    padding:20px;
+		    font-family: Georgia, "Times New Roman", Times, serif;
+		}
+		.sign-up-form h2{
+		    display: block;
+		    text-align: left;
+		    padding: 0;
+		    margin: 0px 0px 20px 0px;
+		    color: #6B9FFF;
+		    font-size:x-large;
+		}
+		.sign-up-form ul{
+		    list-style:none;
+		    padding:0;
+		    margin:0;
+		    align-content: center;
+		}
+		.sign-up-form li{
+		    display: block;
+		    padding: 9px;
+		    border:1px solid #DDDDDD;
+		    margin-bottom: 30px;
+		    border-radius: 3px;
+		}
+		.sign-up-form li:last-child{
+		    border:none;
+		    margin-bottom: 0px;
+		    text-align: center;
+		}
+		.sign-up-form li > label{
+		    display: block;
+		    float: left;
+		    margin-top: -19px;
+		    background: #FFFFFF;
+		    height: 14px;
+		    padding: 2px 5px 2px 5px;
+		    color: #B9B9B9;
+		    font-size: 14px;
+		    overflow: hidden;
+		    font-family: Arial, Helvetica, sans-serif;
+		}
+		.sign-up-form input[type="text"],
+		.sign-up-form input[type="date"],
+		.sign-up-form input[type="datetime"],
+		.sign-up-form input[type="email"],
+		.sign-up-form input[type="number"],
+		.sign-up-form input[type="search"],
+		.sign-up-form input[type="time"],
+		.sign-up-form input[type="url"],
+		.sign-up-form input[type="password"],
+		.sign-up-form textarea,
+		.sign-up-form select 
+		{
+		    box-sizing: border-box;
+		    -webkit-box-sizing: border-box;
+		    -moz-box-sizing: border-box;
+		    width: 100%;
+		    display: block;
+		    outline: none;
+		    border: none;
+		    height: 25px;
+		    line-height: 25px;
+		    font-size: 16px;
+		    padding: 0;
+		    font-family: Georgia, "Times New Roman", Times, serif;
+		}
+
+		.sign-up-form textarea
+		{
+			height: 50px;
+		}
+
+		.sign-up-form input[type="text"]:focus,
+		.sign-up-form input[type="date"]:focus,
+		.sign-up-form input[type="datetime"]:focus,
+		.sign-up-form input[type="email"]:focus,
+		.sign-up-form input[type="number"]:focus,
+		.sign-up-form input[type="search"]:focus,
+		.sign-up-form input[type="time"]:focus,
+		.sign-up-form input[type="url"]:focus,
+		.sign-up-form input[type="password"]:focus,
+		.sign-up-form textarea:focus,
+		.sign-up-form select:focus 
+		{
+		}
+		.sign-up-form li > span{
+		    background: #F3F3F3;
+		    display: block;
+		    padding: 3px;
+		    margin: 0 -9px -9px -9px;
+		    text-align: center;
+		    color: #C0C0C0;
+		    font-family: Arial, Helvetica, sans-serif;
+		    font-size: 11px;
+		}
+		.sign-up-form textarea{
+		    resize:none;
+		}
+		.sign-up-form input[type="submit"],
+		.sign-up-form input[type="reset"]{
+		    background: #2471FF;
+		    border: none;
+		    padding: 10px 20px 10px 20px;
+		    border-bottom: 3px solid #5994FF;
+		    border-radius: 3px;
+		    color: #D2E2FF;
+		}
+		.sign-up-form input[type="submit"]:hover,
+		.sign-up-form input[type="reset"]:hover{
+		    background: #6B9FFF;
+		    color:#fff;
+		}
+	</style>
+</head>
+<body>
+	<form class="sign-up-form">
+		<h2><u>SIGN UP FORM</u></h2>
+		<ul>
+			<li>
+			    <label for="first-name">First Name:</label>
+            	<input type="text" name="first-name" id="first-name" value="" />
+			    <span>Enter your first name here</span>
+			</li>
+			<li>
+	            <label for="last-name">Last Name:</label>
+	            <input type="text" name="last-name" id="last-name" value="" />
+	            <span>Enter your last name here</span>
+	        </li>
+			<li>
+			    <label for="email">Email:</label>
+            	<input type="email" name="email" id="email" value="" />
+			    <span>Enter a valid email address</span>
+			</li>
+			<li>
+			    <label for="birthday">Birthday:</label>
+            	<input type="date" name="birthday" id="birthday" value="" />
+			</li>
+			<li>
+	        	<label for="favourite-sport-list">Favourite Sport:</label>
+				<select name="favourite-sport-list" id="favourite-sport-list">
+					<option value="">Select Sport</option>
+					<option value="basquet">Basquet</option>
+					<option value="futbol">Futbol</option>
+					<option value="voley">Voley</option>
+					<option value="tenis">Tenis</option>
+					<option value="natacion">Natacion</option>
+					<option value="handball">Handball</option>
+					<option value="otros">Otros</option>
+				</select>
+			</li>
+			<li>
+			    <label for="short-bio">Bio:</label>
+            	<textarea name="short-bio" id="short-bio" cols="25" rows="3"></textarea>
+			    <span>Say something about yourself</span>
+			</li>
+			<li>
+			    <input type="submit" value="submit" />
+    			<input type="reset" value="reset" />
+			</li>
+		</ul>
+	</form>
+</body>
+</html>

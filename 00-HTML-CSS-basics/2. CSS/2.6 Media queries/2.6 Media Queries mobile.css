@@ -1,0 +1,65 @@
+@media screen and (max-device-width: 480px){
+	*, *:before, *:after{
+	    -webkit-box-sizing: border-box;
+	    -moz-box-sizing: border-box;
+	    box-sizing: border-box;
+	    font-family: "Tahoma";
+	}
+	.header,.description,.footer,.blocks,.box{
+	    background: #466368;
+	    background: radial-gradient(#648880, #293f50);
+	}
+	.header{
+	    width: 60%;
+	    height: 100px;
+		text-align: center;
+	    font-size: 12px;
+	    float: left;
+	    color: #39CCCC;
+	}
+	.description{
+	    width: 40%;
+	    height: 100px;
+	    float: right;
+	    text-align: center;
+	    color: #39CCCC;
+	    font-size: 7px;
+	}
+	.footer{
+	    width: 100%;
+	    border-top: double green;
+	    text-align: left;
+	    font-size: 7px;
+	    clear: left;
+	    color: white;
+	}
+	.box{
+	    display: inline-block;
+	    width: 48%;
+	    height: 60px;
+	}
+	.box img{
+	    height: 100%;
+	    width: 100%;  
+	    overflow: hidden;
+	    text-align: center;
+	}
+	.box h2 span {
+	    bottom: 80px; 
+	    left: 0; 
+	    width: 100%;
+	    position: relative;
+	    visibility:hidden;
+	}
+	.box:hover h2 span {
+	    visibility:visible;
+	}
+	h2 span { 
+	    color: white; 
+	    font: bold 12px/20px Helvetica, Sans-Serif; 
+	    letter-spacing: -1px;  
+	    background: rgb(0, 0, 0);
+	    background: rgba(0, 0, 0, 0.7);
+	    padding: 5px; 
+	}
+}

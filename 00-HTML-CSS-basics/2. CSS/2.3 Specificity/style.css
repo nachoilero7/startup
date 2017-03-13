@@ -1,0 +1,50 @@
+.header{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+    font-size: 46px;
+}
+.footer{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 10px;
+}
+.content{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    margin: 0 150px;
+    text-align: center;
+}
+.navigation{
+    float: left;
+    width: 150px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 12px;
+}
+.sidebar{
+    float: right;
+    width: 150px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 10px;
+}
+[class$="r"] {
+    background-color: magenta;
+}
+[class*="a"]:not([class$="r"]) {
+    background-color: blue;
+}
+
+*{
+    /*2.3.6. con esta declaracion se superpone dicho font-weight por sobre las clases ya que no lo tienen especificado.*/
+    font-weight: 900;
+}
+
+/*2.3.7.    Como es un inline style se debe modificar dicho valor en esa linea para cambiarlo porque no hay especificacion que lo supere.
+            A menos que se utilice la clausula !important (que es una mala practica), ya que cuando se emplea en una declaracion de estilo,
+            esta sobrescribe a cualquier otra (por mas que no tiene nada que ver con especificidad) hace que interactúe directamente con esta*/

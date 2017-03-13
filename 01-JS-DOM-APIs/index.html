@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en-GB">
+    <head>
+        <meta charset="utf-8">
+        <title>INDEX</title>
+        <meta name="description" content="Open your IDE, create a new file text, save it as index.html. Add the correct doctype, and a few tags with random content.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="./style.css"/>
+        <!--KEYPOINT 4. When the page has finished loading the section must fade in.-->
+        <script type="text/javascript" src="./jquery.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(".hidden-sec").fadeIn(4000);
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <header>
+                <h1>Header</h1>
+            </header>
+        </div>
+        <div class="main">
+            <div class="nav">
+                <nav id="navs">
+                    <h1>Nav</h1>
+                </nav>
+            </div>
+            <div class="aside">
+                <aside id="as">
+                    <h1>Aside</h1>
+                </aside>
+            </div>
+            <div class="sec">
+                <section class="section">
+                    <div class="section-header">
+                        <header class="section-header">
+                            <h1>Header Section</h1>
+                        </header>
+                    </div>
+                    <div class="section-article">
+                        <article class="section-article">
+                            <h1>Article Section</h1>
+                        </article>
+                    </div>
+                    <div class="section-footer">
+                        <footer class="section-footer">
+                            <h1>Footer Section</h1>
+                        </footer>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="footer">
+            <footer>
+                <h1>Footer</h1>
+            </footer>
+        </div>
+        <div class="hidden-sec">
+            <section class="hidden-section">
+                <h1 id="h1hs">Hello World!</h1>
+            </section>
+        </div>
+        <input type="submit" value="Ej.6" onclick="response()" />
+        <script type="text/javascript">
+            function response() {
+                let inputTag = document.createElement("p");
+                let xmlhttp = new XMLHttpRequest();
+                xmlhttp.open("GET","http://api.icndb.com/jokes/random",true);
+                xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status == 200) {
+                        inputTag.innerHTML="<p>"+xmlhttp.responseText+"</p>";
+                    }
+                    else{
+                        //8. Show section content in red when a server error occurs.
+                        document.getElementById("h1hs").style.color = "red";
+                    }
+                }
+                xmlhttp.send(null);
+                document.getElementById("h1hs").appendChild(inputTag);
+            }
+        </script>
+        <!--KEYPOINT 7.From the previous exercise create a reusable function to perform AJAX calls. The function must accept a config object and return an ES6 Promise.-->
+        <script type="text/javascript">
+            function ajaxCalls(url) {
+                return new Promise(function(resolve, reject) {
+                    let req = new XMLHttpRequest();
+                    req.open("GET", url);
+                    req.onload = function() {
+                        if (req.status === 200) {
+                            resolve(inputTag.innerHTML="<p>"+xmlhttp.responseText+"</p>");
+                        } else {
+                            reject(new Error(req.statusText));
+                        }
+                    };
+                    req.onerror = function() {
+                        reject(new Error("Network error"));
+                    };
+                    req.send();
+                    document.getElementById("h1hs").appendChild(inputTag);
+                });
+            }
+        </script>
+        <!--9.Use the function created in exercise 6 to get the response from https://api.github.com/search/repositories with parameters data "q = 'JavaScript'". First log the service response in Chrome's console to analyze data (see provided link on Chrome console), then display repository's full_name as a list in the right side of the screen. The ul element must be used to list the repositories data.-->
+        <!--*ME FALTA MANEJAR LOS 3 ELEMENTOS DENTRO DE SECCION QUE TENGAN EL MISMO TAMAÑO LUEGO DE EJECUTAR EL SCRIPT-->
+        <input type="submit" value="Ej.9" onclick="response_repo('q=JavaScript')" />
+        <script type="text/javascript">
+            function response_repo(q) {
+                let inputTag = document.createElement("ul");
+                let xmlhttp = new XMLHttpRequest();
+                let url = "https://api.github.com/search/repositories?"+q;
+                xmlhttp.open("GET", url, true);
+                xmlhttp.onreadystatechange = function() {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        let arr = JSON.parse(xmlhttp.responseText);
+                        let out = "";
+                        let i;
+                        for(i = 0; i  <arrtems.length; i++) {
+                            if (arrtems[i].full_name != "") {
+                                out += "<li>" + arrtems[i].full_name + "<li>\n";
+                                let liTag = document.createElement("li");
+                                let t = document.createTextNode(arrtems[i].full_name);
+                                liTag.appendChild(t);
+                                inputTag.appendChild(liTag);
+                            }
+                        }
+                        document.getElementById("as").appendChild(inputTag);
+                    }
+                };
+                xmlhttp.send(null);
+            }
+        </script>
+        <!--KEYPOINT 10.Add an input type="text", and reuse the code for exercise 9, so the user can perform search for any repository.-->
+        <div>
+            <input type="text" id="searchRepo" value="Ej: 'q = ...'" />
+            <button type="button" onclick="response_repo('q=' + document.getElementById('searchRepo').value)">Ej.10</button>
+        </div>
+        <!--KEYPOINT 12.Write a function that takes as input a matrix of data and outputs a DOM structure representing a table. Attach it to the body of a given page.-->
+        <div id="matriz">
+            <input type="submit" value="Generar matriz" onclick="generar_matriz([[ 0,  1,  2,  3],[ 4,  5,  6,  7],[ 8,  9, 10, 11]])" />
+            <script type="text/javascript">
+                function generar_matriz(arr) {
+                    // Obtener la referencia del elemento body
+                    let body = document.getElementsByTagName("body")[0];
+                    // Crea un elemento <table> y un elemento <tbody>
+                    let tabla   = document.createElement("thead");
+                    let tblBody = document.createElement("tbody");
+                    // Crea las celdas
+                    for (let i = 0; i < arr.length; i++) {
+                    // Crea las hileras de la tabla
+                        let hilera = document.createElement("tr");
+                        for (let j = 0; j < arr[i].length; j++) {
+                        // Crea un elemento <td> y un nodo de texto, haz que el nodo de
+                        // texto sea el contenido de <td>, ubica el elemento <td> al final
+                        // de la hilera de la tabla
+                            let celda = document.createElement("td");
+                            let textoCelda = document.createTextNode(arr[i][j]);
+                            celda.appendChild(textoCelda);
+                            hilera.appendChild(celda);
+                        }
+                        // agrega la hilera al final de la tabla (al final del elemento tblbody)
+                        tblBody.appendChild(hilera);
+                    }
+                    // posiciona el <tbody> debajo del elemento <table>
+                    tabla.appendChild(tblBody);
+                    // appends <table> into <body>
+                    body.appendChild(tabla);
+                }
+            </script>
+        </div>
+    </body>
+</html>
